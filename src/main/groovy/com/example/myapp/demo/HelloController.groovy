@@ -15,7 +15,7 @@ class HelloController{
         return "Hello"
     }
 
-    @RequestMapping(name =  "/sendnudes", method = RequestMethod.POST)
+    @RequestMapping(name =  "/testpost", method = RequestMethod.POST)
     public ResponseEntity<ExampleObject> sendNudes(@RequestBody ExampleObject exampleObject){
         return new ResponseEntity<ExampleObject>(exampleObject, HttpStatus.OK)
     }

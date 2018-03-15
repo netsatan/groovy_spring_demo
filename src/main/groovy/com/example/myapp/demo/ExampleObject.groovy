@@ -2,9 +2,9 @@ package com.example.myapp.demo
 
 class ExampleObject{
     String name
-    String age
+    int age
 
-    public ExampleObject(name, age){
+    public ExampleObject(String name, int age){
         this.age = age
         this.name = name
     }
@@ -12,5 +12,9 @@ class ExampleObject{
     public ExampleObject(){
         this.age = 3
         this.name = "Jas"
+    }
+
+    public int getAge(){
+        return this.age
     }
 }
