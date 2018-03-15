@@ -17,10 +17,20 @@ class ExampleObjectTests extends Specification{
         "Abc" | 4
     }
 
+    @Unroll
     def ExampleObjectConstructorWithoutParams(){
         expect:
         ExampleObject exampleObject = new ExampleObject()
         exampleObject.getName() == "Jas"
         exampleObject.getAge() == 3
     }
+
+    @Unroll
+    def "Failing because of wrong type of second parameter"(){
+        when:
+        ExampleObject exampleObject = new ExampleObject("Jas", "3")
+        then:
+        thrown(GroovyRuntimeException)
+    }
+
 }
