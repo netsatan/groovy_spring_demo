@@ -4,7 +4,7 @@ import spock.lang.Unroll
 
 class ExampleObjectTests extends Specification{
 
-    @Unroll
+    @Unroll("ExampleObject testing with parameters name: #a, age: #b")
     def ExampleObjectConstructor(){
         expect:
         ExampleObject exampleObject = new ExampleObject(a, b)
@@ -17,7 +17,7 @@ class ExampleObjectTests extends Specification{
         "Abc" | 4
     }
 
-    @Unroll
+
     def ExampleObjectConstructorWithoutParams(){
         expect:
         ExampleObject exampleObject = new ExampleObject()
@@ -25,7 +25,6 @@ class ExampleObjectTests extends Specification{
         exampleObject.getAge() == 3
     }
 
-    @Unroll
     def "Failing because of wrong type of second parameter"(){
         when:
         ExampleObject exampleObject = new ExampleObject("Jas", "3")
